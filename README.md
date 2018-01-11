@@ -1,0 +1,2 @@
+# openshift
+openshift3 学习文件，包含自定义的imageStream和template、imageToSource

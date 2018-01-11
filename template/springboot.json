@@ -1,0 +1,94 @@
+{
+    "kind": "Template",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "springboot",
+        "creationTimestamp": null,
+        "annotations": {
+            "description": "springboot s2i 测试项目，仅用于个人学习",
+           "sampleRepo": "https://github.com/openshift/httpd-ex.git",
+           "supports": "springboot",
+           "tags": "builder,java,springboot",
+            "iconClass": "icon-spring"
+        }
+    },
+    "parameters": [
+        {
+            "name": "APP_NAME",
+            "displayName": "应用名",
+            "description": "需要构建的工程名字，对应于git仓库中子项目",
+            "value": "agent-api",
+            "required": true
+        }
+    ],
+    "objects": [
+        {
+            "kind": "ImageStream",
+            "apiVersion": "v1",
+            "metadata": {
+                "name": "springboot",
+                "generation": 6,
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "springboot"
+                },
+                "annotations": {
+                    "openshift.io/generated-by": "OpenShiftWebConsole",
+                    "openshift.io/image.dockerRepositoryCheck": "2018-01-10T09:31:59Z"
+                }
+            },
+            "spec": {
+                "lookupPolicy": {
+                    "local": false
+                },
+                "tags": [
+                    {
+                        "name": "1.0",
+                        "annotations": {
+                            "description": "sprintboot test",
+                            "iconClass": "icon-spring",
+                            "openshift.io/display-name": "wuxinbo springboot 1.0",
+                            "openshift.io/provider-display-name": "com.wu",
+                            "sampleRepo": "https://github.com/openshift/httpd-ex.git",
+                            "supports": "springboot",
+                            "tags": "builder,java,springboot"
+                        },
+                        "from": {
+                            "kind": "DockerImage",
+                            "name": "172.30.239.27:5000/dev/springboot:1.0"
+                        },
+                        "generation": 6,
+                        "importPolicy": {},
+                        "referencePolicy": {
+                            "type": "Source"
+                        }
+                    },
+                    {
+                        "name": "1.1",
+                        "annotations": {
+                            "description": "sprintboot test",
+                            "iconClass": "icon-spring",
+                            "openshift.io/display-name": "wuxinbo springboot 1.1",
+                            "openshift.io/provider-display-name": "com.wu",
+                            "sampleRepo": "https://github.com/openshift/httpd-ex.git",
+                            "supports": "springboot",
+                            "tags": "builder,java,springboot"
+                        },
+                        "from": {
+                            "kind": "DockerImage",
+                            "name": "172.30.239.27:5000/dev/springboot:1.1"
+                        },
+                        "generation": 5,
+                        "importPolicy": {},
+                        "referencePolicy": {
+                            "type": "Source"
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "dockerImageRepository": ""
+            }
+        }
+    ]
+}

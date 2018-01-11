@@ -1,0 +1,67 @@
+{
+    "kind": "ImageStream",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "springboot",
+        "generation": 1,
+        "creationTimestamp": null,
+        "labels": {
+            "app": "springboot"
+        },
+        "annotations": {
+            "openshift.io/generated-by": "OpenShiftWebConsole"
+        }
+    },
+    "spec": {
+        "lookupPolicy": {
+            "local": false
+        },
+        "tags": [
+            {
+                "name": "1.1",
+                "annotations": {
+                    "openshift.io/display-name": "wuxinbo springboot 1.1",
+                    "openshift.io/provider-display-name": "com.wu",
+                    "description": "sprintboot test",
+                    "iconClass": "icon-spring",
+                    "tags": "builder,java,spring,tomcat",
+                    "supports": "springboot",
+                    "sampleRepo": "https://github.com/openshift/httpd-ex.git"
+                },
+                "from": {
+                    "kind": "DockerImage",
+                    "name": "docker.io/wuxinbo/springboot:1.1"
+                },
+                "generation": null,
+                "importPolicy": {},
+                "referencePolicy": {
+                    "type": ""
+                }
+            },
+            {
+                "name": "1.0",
+                "annotations": {
+                    "openshift.io/display-name": "wuxinbo springboot 1.0",
+                    "openshift.io/provider-display-name": "com.wu",
+                    "description": "sprintboot test",
+                    "iconClass": "icon-spring",
+                    "tags": "builder,java,springboot,tomcat",
+                    "supports": "springboot",
+                    "sampleRepo": "https://github.com/openshift/httpd-ex.git"
+                },
+                "from": {
+                    "kind": "DockerImage",
+                    "name": "docker.io/wuxinbo/springboot:1.0"
+                },
+                "generation": null,
+                "importPolicy": {},
+                "referencePolicy": {
+                    "type": ""
+                }
+            }
+        ]
+    },
+    "status": {
+        "dockerImageRepository": ""
+    }
+}

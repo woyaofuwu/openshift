@@ -1,0 +1,15 @@
+#!/bin/bash -e
+#
+# S2I run script for the 'springboot' image.
+# The run script executes the server that runs your application.
+#
+# For more information see the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+profile=wuxinbo
+CENTRAL_CONFIG_URL=http://192.168.0.53:2379,http://192.168.0.54:2379,http://11.8.38.23:2379
+JAVA_OPTS="-server -Xms256m -Xmx1024m -Dspring.profiles.active=$profile -Dcentralconfig.urls=$CENTRAL_CONFIG_URL -Dlog.basepath=logs"
+echo "$APP_NAME is starting!"
+java -jar $JAVA_OPTS src/$APP_NAME/target/$APP_NAME.jar
+echo "$APP_NAME is started!"
+#exec asdf -p 8080

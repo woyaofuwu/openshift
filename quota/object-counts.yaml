@@ -3,7 +3,8 @@ kind: ResourceQuota
 metadata:
   name: object-counts
 spec:
-  persistentvolumeclaims: 10
-  pods: "20"
-  services: "10"
+  hard:
+   persistentvolumeclaims: 10
+   pods: "20"
+   services: "10"
 status: {}  

@@ -1,0 +1,12 @@
+# quota 配额测试
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-resource
+spec:
+  hard:
+    limits.cpu: 4
+    limits.memory: 2Gi
+  scopes:
+    - NotTerminating
+status: {}

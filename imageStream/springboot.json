@@ -22,6 +22,7 @@
                 "annotations": {
                     "openshift.io/display-name": "wuxinbo springboot 1.1",
                     "openshift.io/provider-display-name": "com.wu",
+                    "openshift.io/documentation-url": "https://github.com/wuxinbo/openshift" ,
                     "description": "sprintboot test",
                     "iconClass": "icon-spring",
                     "tags": "builder,java,spring,tomcat",
@@ -39,10 +40,11 @@
                 }
             },
             {
-                "name": "1.0",
+                "name": "1.0(已过时)",
                 "annotations": {
                     "openshift.io/display-name": "wuxinbo springboot 1.0",
                     "openshift.io/provider-display-name": "com.wu",
+                    "openshift.io/documentation-url": "https://github.com/wuxinbo/openshift" ,
                     "description": "sprintboot test",
                     "iconClass": "icon-spring",
                     "tags": "builder,java,springboot,tomcat",
